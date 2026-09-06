@@ -4,6 +4,7 @@ export const SITE_CONFIG = {
   description: "Godkänd halkbana och riskutbildning 2 (Risktvåan) för Bil, MC och YKB i Piteå.",
   url: "https://norrahalkbanan.se",
   bookingUrl: "https://www.bokningskoll.se/norra",
+  ykbBookingUrl: "https://www.bokningskoll.se/norra/ykb.nsf/bokamulti.xsp",
   phone: "0911-100 21",
   phoneRaw: "091110021",
   email: "info@norrahalkbanan.se",

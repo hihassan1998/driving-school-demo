@@ -2,7 +2,20 @@
 
 A modern, high-performance, mobile-first web application for **Norra Halkbanan i Piteå AB** — official certified training provider for **Riskutbildning 2 (Risktvåan)** for Passenger Cars, Motorcycles, and Professional Driver CPC (YKB) in Norrbotten, Sweden.
 
-Rebuilt from a legacy WordPress site into a modern **Next.js 16 App Router** project featuring a Nordic safety design system, zero-latency bilingual support (Swedish & English), interactive gallery, accredited driving school backlinks, and direct booking conversion via **bokningskoll.se**.
+---
+
+## 🔗 Links
+
+- **🌐 Live Demo:** [Halkbana och Riskutbildning 2 Piteå | Norra Halkbanan AB](https://driving-school-demo-nine.vercel.app/)
+- **🏛️ Original Website:** [Halkbana och riskutbildning - Risktvåan | Norra Halkbanan i Piteå AB](https://www.norrahalkbanan.se/)
+- **📅 Official Booking Portal:** [Riskutbildning 2 bokning (Bokningskoll)](https://www.bokningskoll.se/norra)
+- **🚚 YKB Booking Portal:** [YKB bokning (Bokningskoll YKB)](https://www.bokningskoll.se/norra/ykb.nsf/bokamulti.xsp)
+
+---
+
+## ⚠️ Disclaimer
+
+> **IMPORTANT NOTICE:** This repository and the live demo website ([https://driving-school-demo-nine.vercel.app/](https://driving-school-demo-nine.vercel.app/)) were created strictly for **demonstration and marketing proposal purposes only**. This project is not affiliated with, endorsed by, or trying to steal content from [norrahalkbanan.se](https://www.norrahalkbanan.se/). All brand names, images, logos, and trademarks belong to their respective owners (Norra Halkbanan i Piteå AB).
 
 ---
 
@@ -10,9 +23,10 @@ Rebuilt from a legacy WordPress site into a modern **Next.js 16 App Router** pro
 
 - **🚀 Next.js 16 App Router & React 19:** Ultra-fast static pre-rendering with dynamic metadata and SEO optimization.
 - **🌐 Native Bilingual Support (SV / EN):** Instant language switching toggle (Swedish & English) backed by a lightweight content dictionary (`lib/dictionary.ts`).
-- **📅 Direct Booking Integration:** Conversion-focused primary and secondary CTAs explicitly targeting **[Riskutbildning 2 bokning (bokningskoll.se/norra)](https://www.bokningskoll.se/norra)**.
+- **📅 Direct Booking Integration:** Conversion-focused primary and secondary CTAs explicitly targeting **[bokningskoll.se/norra](https://www.bokningskoll.se/norra)** and YKB booking portals.
 - **🖼️ Interactive Photo Gallery:** High-quality gallery showing training track facilities, vehicles, classrooms, rollover simulator, and crash/whiplash sled test equipment with category filtering & lightbox modal.
 - **🎓 Partner Driving Schools Directory:** Backlink directory listing accredited regional driving schools (*Roberts, Expansa, 3050, Po's, Vågelinds, MT, AHA, Staans, MK, City, Ranheimers, Centrala, Norra*) and public authorities (*Försvarsmakten, Migrationsverket, Arbetsmiljöverket*).
+- **🚚 Complete YKB Section (`/ykb-utbildning`):** Detailed course requirements, duration (35 hours / 5 days), transparent pricing (1 280 kr exkl moms / delkurs, 6 400 kr totalt), and direct YKB booking link.
 - **📍 Interactive Location & Contact:** Embedded interactive Google Maps for **Fordonsvägen 2, 941 43 Piteå** alongside NAP details and quick message form.
 - **🔍 Technical SEO & Schema:** Built-in `LocalBusiness` JSON-LD structured data, dynamic `/sitemap.xml`, and `/robots.txt`.
 
@@ -39,15 +53,15 @@ Rebuilt from a legacy WordPress site into a modern **Next.js 16 App Router** pro
 │   ├── page.tsx               # Homepage with Hero, Services, WhyUs, Gallery, Partners, FAQ, Contact
 │   ├── risk-2-bil/page.tsx    # Risk 2 Bil dedicated course page
 │   ├── risk-2-mc/page.tsx     # Risk 2 MC dedicated course page
-│   ├── ykb-utbildning/page.tsx# YKB professional driver training page
+│   ├── ykb-utbildning/page.tsx# YKB training page (pricing: 1280kr/6400kr ex moms & YKB booking link)
 │   ├── boka/page.tsx           # Dedicated booking hub (redirects to bokningskoll.se/norra)
 │   ├── kontakt/page.tsx        # Contact & location page
 │   ├── sitemap.ts             # Dynamic XML sitemap generator
 │   └── robots.ts              # SEO robots configuration
 ├── components/
 │   ├── Header.tsx             # Responsive header with official logo & SV/EN toggle
-│   ├── Footer.tsx             # Footer with NAP info & Transportstyrelsen accreditation badge
-│   ├── Hero.tsx               # High-conversion hero section
+│   ├── Footer.tsx             # Footer with NAP info & demo disclaimer
+│   ├── Hero.tsx               # High-conversion hero section with unblurred sliding image carousel
 │   ├── Services.tsx           # Service cards for Risk 2 Bil, Risk 2 MC, YKB
 │   ├── GallerySection.tsx     # Interactive photo gallery with category filter & lightbox
 │   ├── PartnersSection.tsx    # Backlink directory for partner driving schools
@@ -55,7 +69,7 @@ Rebuilt from a legacy WordPress site into a modern **Next.js 16 App Router** pro
 │   ├── FAQSection.tsx         # Accessible bilingual accordion
 │   └── ContactSection.tsx     # Contact details & Google Maps embed
 ├── lib/
-│   ├── constants.ts           # Business parameters & booking URL (bokningskoll.se/norra)
+│   ├── constants.ts           # Business parameters & booking URLs (bokningskoll.se/norra)
 │   ├── dictionary.ts          # Bilingual Swedish/English content dictionary
 │   └── utils.ts               # Tailwind class merging utility
 ├── public/                    # Static assets
@@ -83,31 +97,12 @@ cd driving-school-demo
 # Install dependencies
 npm install
 
-# Start local development server
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
-
-### Production Build
-
-```bash
 # Build static pages and type check
 npm run build
 
-# Start production server
+# Start production server locally
 npm start
 ```
-
----
-
-## 🚀 Deployment
-
-This project is configured for 1-click zero-config deployment on **[Vercel](https://vercel.com)**.
-
-1. Connect your GitHub repository to Vercel.
-2. Select **Next.js** framework preset.
-3. Deploy!
 
 ---
 

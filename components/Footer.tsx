@@ -4,13 +4,23 @@ import React from "react";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/lib/constants";
 import { useLanguage } from "./LanguageContext";
-import { ShieldCheck, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
+import { ShieldCheck, Phone, Mail, MapPin, ExternalLink, AlertTriangle } from "lucide-react";
 
 export function Footer() {
   const { dict } = useLanguage();
 
   return (
     <footer className="bg-slate-950 text-slate-400 text-sm border-t border-slate-900">
+      {/* Demo Disclaimer Topbar */}
+      <div className="bg-amber-500/10 border-b border-amber-500/20 text-amber-300 text-xs py-2.5 px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-center space-x-2 text-center">
+          <AlertTriangle className="w-4 h-4 shrink-0 text-amber-400" />
+          <span>
+            <strong>Demowebbplats:</strong> Denna webbplats är enbart skapad för marknadsförings- och utvärderingssyften och gör inga anspråk på att ersätta originalwebbplatsen <a href="https://www.norrahalkbanan.se/" target="_blank" rel="noopener noreferrer" className="underline font-bold hover:text-white">norrahalkbanan.se</a>.
+          </span>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Col 1: Brand & Tagline */}
