@@ -5,6 +5,7 @@ import { SITE_CONFIG } from "@/lib/constants";
 import { LanguageProvider } from "@/components/LanguageContext";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { LayoutDisclaimer } from "@/components/LayoutDisclaimer";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -102,18 +103,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
-
-          {/* Lower level layout disclaimer banner below the footer */}
-          <div className="bg-slate-900 border-t border-slate-800 text-slate-400 text-[11px] py-3 px-4 text-center">
-            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
-              <span>
-                <strong>Legal Disclaimer:</strong> Unofficial Redesign Demo created for presentation & evaluation only.
-              </span>
-              <span>
-                Original site: <a href="https://www.norrahalkbanan.se/" target="_blank" rel="noopener noreferrer" className="underline text-amber-400 font-semibold">norrahalkbanan.se</a>
-              </span>
-            </div>
-          </div>
+          <LayoutDisclaimer />
         </LanguageProvider>
       </body>
     </html>

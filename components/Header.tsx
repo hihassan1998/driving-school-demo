@@ -14,20 +14,20 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      {/* Top Demo Disclaimer Alert Bar */}
+      {/* Top Demo Disclaimer Alert Bar - Reactive to SV / EN Language Toggle */}
       <div className="bg-amber-500 text-slate-950 font-bold text-xs py-1.5 px-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 text-center sm:text-left">
           <div className="flex items-center space-x-2 mx-auto sm:mx-0">
             <AlertTriangle className="w-4 h-4 shrink-0 text-slate-950" />
             <span>
-              <strong>DEMO-WEBBPLATS:</strong> Byggd enbart för marknadsföring och utvärdering.
+              <strong>{dict.disclaimer.topBadge}</strong> {dict.disclaimer.topTag}
             </span>
           </div>
           <a
-            href="#disclaimer"
+            href="/#disclaimer"
             className="hidden md:inline-flex items-center space-x-1 underline hover:text-slate-800 transition-colors font-extrabold text-[11px] uppercase tracking-wider"
           >
-            <span>Läs Ansvarsfriskrivning</span>
+            <span>{dict.disclaimer.readMore}</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         </div>
@@ -67,10 +67,10 @@ export function Header() {
 
       {/* Main Header Nav */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo with official brand image */}
-          <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative h-12 w-48 sm:w-56">
+          <Link href="/" className="flex items-center space-x-3 group shrink-0">
+            <div className="relative h-11 w-40 sm:w-48 xl:w-56">
               <Image
                 src="https://www.norrahalkbanan.se/wp-content/uploads/2017/10/logga.png"
                 alt="Norra Halkbanan i Piteå AB"
@@ -82,67 +82,67 @@ export function Header() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden lg:flex items-center space-x-5">
+          <nav className="hidden lg:flex items-center space-x-3 xl:space-x-5 shrink-1">
             <Link
               href="/"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.home}
             </Link>
             <Link
               href="/risk-2-bil"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.risk2bil}
             </Link>
             <Link
               href="/risk-2-mc"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.risk2mc}
             </Link>
             <Link
               href="/ykb-utbildning"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.ykb}
             </Link>
-            <a
-              href="#galleri"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+            <Link
+              href="/#galleri"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.gallery}
-            </a>
-            <a
-              href="#trafikskolor"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+            </Link>
+            <Link
+              href="/#trafikskolor"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.partners}
-            </a>
+            </Link>
             <Link
               href="/kontakt"
-              className="text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors"
+              className="text-xs xl:text-sm font-semibold text-slate-700 hover:text-blue-900 transition-colors whitespace-nowrap"
             >
               {dict.nav.contact}
             </Link>
           </nav>
 
           {/* Language Switcher & Booking CTA Button */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div className="hidden lg:flex items-center space-x-2.5 xl:space-x-3 shrink-0">
             <LanguageToggle />
             <a
               href={SITE_CONFIG.bookingUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-4 py-2.5 rounded-lg shadow-sm hover:shadow transition-all group"
+              className="inline-flex items-center space-x-1.5 bg-blue-700 hover:bg-blue-800 text-white font-bold text-xs xl:text-sm px-3.5 xl:px-4 py-2 xl:py-2.5 rounded-lg shadow-xs hover:shadow transition-all group whitespace-nowrap"
             >
               <span>{dict.nav.bookNow}</span>
-              <ExternalLink className="w-4 h-4 text-blue-200 group-hover:translate-x-0.5 transition-transform" />
+              <ExternalLink className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-blue-200 group-hover:translate-x-0.5 transition-transform" />
             </a>
           </div>
 
           {/* Mobile menu trigger */}
-          <div className="flex lg:hidden items-center space-x-2">
+          <div className="flex lg:hidden items-center space-x-2 shrink-0">
             <LanguageToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -190,20 +190,20 @@ export function Header() {
           >
             {dict.nav.ykb}
           </Link>
-          <a
-            href="#galleri"
+          <Link
+            href="/#galleri"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50"
           >
             {dict.nav.gallery}
-          </a>
-          <a
-            href="#trafikskolor"
+          </Link>
+          <Link
+            href="/#trafikskolor"
             onClick={() => setMobileMenuOpen(false)}
             className="block px-3 py-2 rounded-md text-base font-medium text-slate-800 hover:bg-slate-50"
           >
             {dict.nav.partners}
-          </a>
+          </Link>
           <Link
             href="/kontakt"
             onClick={() => setMobileMenuOpen(false)}
