@@ -97,11 +97,23 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col antialiased">
+      <body className="min-h-screen flex flex-col antialiased bg-slate-950">
         <LanguageProvider>
           <Header />
           <main className="flex-grow">{children}</main>
           <Footer />
+
+          {/* Lower level layout disclaimer banner below the footer */}
+          <div className="bg-slate-900 border-t border-slate-800 text-slate-400 text-[11px] py-3 px-4 text-center">
+            <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+              <span>
+                <strong>Legal Disclaimer:</strong> Unofficial Redesign Demo created for presentation & evaluation only.
+              </span>
+              <span>
+                Original site: <a href="https://www.norrahalkbanan.se/" target="_blank" rel="noopener noreferrer" className="underline text-amber-400 font-semibold">norrahalkbanan.se</a>
+              </span>
+            </div>
+          </div>
         </LanguageProvider>
       </body>
     </html>

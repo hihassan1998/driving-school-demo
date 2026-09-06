@@ -6,7 +6,7 @@ import Image from "next/image";
 import { SITE_CONFIG } from "@/lib/constants";
 import { useLanguage } from "./LanguageContext";
 import { LanguageToggle } from "./LanguageToggle";
-import { Phone, Mail, Menu, X, ExternalLink, ShieldCheck } from "lucide-react";
+import { Phone, Mail, Menu, X, ExternalLink, ShieldCheck, AlertTriangle } from "lucide-react";
 
 export function Header() {
   const { dict } = useLanguage();
@@ -14,7 +14,26 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-xs">
-      {/* Top Bar */}
+      {/* Top Demo Disclaimer Alert Bar */}
+      <div className="bg-amber-500 text-slate-950 font-bold text-xs py-1.5 px-4">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 text-center sm:text-left">
+          <div className="flex items-center space-x-2 mx-auto sm:mx-0">
+            <AlertTriangle className="w-4 h-4 shrink-0 text-slate-950" />
+            <span>
+              <strong>DEMO-WEBBPLATS:</strong> Byggd enbart för marknadsföring och utvärdering.
+            </span>
+          </div>
+          <a
+            href="#disclaimer"
+            className="hidden md:inline-flex items-center space-x-1 underline hover:text-slate-800 transition-colors font-extrabold text-[11px] uppercase tracking-wider"
+          >
+            <span>Läs Ansvarsfriskrivning</span>
+            <ExternalLink className="w-3 h-3" />
+          </a>
+        </div>
+      </div>
+
+      {/* Secondary Contact Bar */}
       <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center space-x-4">

@@ -70,6 +70,11 @@ export interface DictionaryContent {
     subtitle: string;
     features: FeatureData[];
   };
+  video: {
+    title: string;
+    subtitle: string;
+    badge: string;
+  };
   gallery: {
     title: string;
     subtitle: string;
@@ -218,6 +223,11 @@ export const DICTIONARY: Record<Language, DictionaryContent> = {
           description: "När du genomfört utbildningen rapporterar vi direkt digitalt till Transportstyrelsen så att du kan gå vidare mot körkortet.",
         },
       ],
+    },
+    video: {
+      title: "Sveriges Trafikövningsplatser & Norra Halkbanan",
+      subtitle: "Se filmen om vår anläggning, halkbana och hur våra praktiska säkerhetsutbildningar går till.",
+      badge: "Presentationsfilm",
     },
     gallery: {
       title: "Galleri & Bilder från Banan",
@@ -451,6 +461,11 @@ export const DICTIONARY: Record<Language, DictionaryContent> = {
           description: "Upon course completion, we immediately submit your registration digitally to Transportstyrelsen so you can proceed to your practical driving test.",
         },
       ],
+    },
+    video: {
+      title: "Swedish Traffic Safety Centers & Norra Halkbanan",
+      subtitle: "Watch the video presentation highlighting our track facilities, vehicles, and practical risk training programs.",
+      badge: "Video Presentation",
     },
     gallery: {
       title: "Facility & Track Gallery",
